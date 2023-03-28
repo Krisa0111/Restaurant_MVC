@@ -1,0 +1,26 @@
+﻿@using Restaurant.Models
+@model Food
+<h2>Create food</h2>
+
+<form action="create" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column">
+    @Html.LabelFor(t => t.Név)
+    @Html.EditorFor(t => t.Név)
+    @*@Html.ValidationMessageFor(t => t.Név)*@
+
+    @Html.LabelFor(t => t.Tápérték)
+    @Html.EditorFor(t => t.Tápérték)
+    @*@Html.ValidationMessageFor(t => t.Tápérték)*@
+
+    @Html.LabelFor(t => t.Kategória)
+    @Html.EditorFor(t => t.Kategória)
+
+    @Html.LabelFor(t => t.Ár)
+    @Html.EditorFor(t => t.Ár)
+
+
+    <label>Picture</label>
+    <input type="file" name="picturedata"/>
+
+    <input type="submit" value="Create" /> 
+
+</form>

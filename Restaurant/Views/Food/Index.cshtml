@@ -1,0 +1,33 @@
+﻿@using Restaurant.Helpers
+@using Restaurant.Models
+@model IEnumerable<Food>
+@inject TableBuilder tb
+
+
+<h1>Restaurant</h1>
+
+@Html.Raw(tb.BuildTable(Model))
+
+<table>
+    <tr>
+        <th>Picture</th>
+        <th>Név</th>
+        <th>Tápérték</th>
+        <th>Kategória</th>
+        <th>Ár</th>
+    </tr>
+    @foreach(var item in Model){
+        @:<tr>
+        @: <td><img height="100" src="@Url.Action("GetImage", "Food", new {id = item.Id})"/></td>
+        @: <td>@item.Név</td>
+        @: <td>@item.Tápérték</td>
+        @: <td>@item.Kategória</td>
+        @: <td>@item.Ár</td>
+      @*  @: <td>
+        @:    <a href="/food/delete?name=@item.Name">Delete</a>
+        @:    <a href="/food/update?name=@item.Name">Update</a>
+        @: </td>*@
+        @: </tr>
+    }
+</table>
+

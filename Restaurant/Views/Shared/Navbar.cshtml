@@ -1,0 +1,6 @@
+﻿@using Restaurant.Data
+@inject IRestaurantRepository repo
+<nav>
+    <a href="/Food/Index">List Foods (@repo.Read().Count())</a>
+    <a href="/Food/Create">New Food</a>
+</nav>
